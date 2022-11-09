@@ -39,7 +39,7 @@ console.log('Operaciones con los siguientes números: ' + num3 +' y '+num4+'\nRe
 //Ejercicio 4
 const saludo = 'Hola'
 
-if (saludo == 'Hola') {
+if (saludo === 'Hola') {
     console.log('Ha saludado')
 }
 
@@ -52,15 +52,39 @@ pokemones.forEach(element => {
     console.log(element)
 });
 
-//Ejercicio 6
+//Ejercicio 6 // CORREGIDO
 const pokemones2 = [
-    ['Charizard', 'fuego'],
-    ['Blastoise','agua'],
-    ['Venosaur','planta']
-]
-pokemones2.forEach(element =>{
-    console.log(element[0] + 'es de tipo: ' + element[1])
-})
-if(pokemones2[1] = 'fuego'){
-    console.log('Es de tipo fuego')
-}
+    {
+        nombre: 'Charizard',
+        tipo: 'fuego'
+    },
+    {
+        nombre: 'Venosaur',
+        tipo: 'planta'
+    },
+    {
+        nombre: 'Blastoise',
+        tipo: 'agua'
+    }
+]    
+
+// if (pokemones2[0].tipo === 'fuego') {
+//     console.log(pokemones2[0].nombre + ' Es un pokemon de tipo fuego! 🔥')
+// } else if(pokemones2[1].tipo === 'fuego'){
+//     console.log(pokemones2[0].nombre + ' Es un pokemon de tipo fuego! 🔥')
+// } else if(pokemones2[2].tipo === 'fuego'){
+//     console.log(pokemones2[0].nombre + ' Es un pokemon de tipo fuego! 🔥')
+// }
+
+//CORREGIDO
+pokemones2.forEach(pokemon => {
+    if (pokemon.tipo === 'fuego') {
+        console.log(pokemon.nombre + ' es un pokemon de tipo fuego! 🔥')
+    }
+});
+
+// pokemones2.forEach(({ tipo }) => {
+//     if (tipo === 'fuego') {
+//       console.log('¡Es un pokemon de fuego! 🔥');
+//     }
+//   });
